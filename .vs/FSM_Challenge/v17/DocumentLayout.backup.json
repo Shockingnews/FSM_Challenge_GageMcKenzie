@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\W0282611\\Documents\\FSM_Challenge\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{15CB7F35-5EB1-472F-8563-7AA6F4F5FC1A}|FSM_Challenge\\FSM_Challenge.csproj|c:\\users\\w0282611\\documents\\fsm_challenge\\fsm_challenge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15CB7F35-5EB1-472F-8563-7AA6F4F5FC1A}|FSM_Challenge\\FSM_Challenge.csproj|solutionrelative:fsm_challenge\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\W0282611\\Documents\\FSM_Challenge\\FSM_Challenge\\Program.cs",
+              "RelativeDocumentMoniker": "FSM_Challenge\\Program.cs",
+              "ToolTip": "C:\\Users\\W0282611\\Documents\\FSM_Challenge\\FSM_Challenge\\Program.cs",
+              "RelativeToolTip": "FSM_Challenge\\Program.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAuwC8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T01:49:07.346Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
