@@ -83,8 +83,13 @@ namespace FSM_Challenge
                 case EnemyState.Shooting:
                     // TODO: shoot a bullet
                     // note: there is a Shoot method ready for use! 
-                    return EnemyState.WalkingRandomly;
-                    
+                    Shoot();
+                    if (rand < 0.1d) return EnemyState.Shooting;
+                    if (rand < 0.2d) return EnemyState.WalkingRandomly;
+                    if (rand < 0.9d) return EnemyState.Idle;
+                    return EnemyState.Shooting;
+
+
                 case EnemyState.WalkingRandomly:
                     if (rand < 0.2d)
                     {
