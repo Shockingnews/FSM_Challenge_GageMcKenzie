@@ -36,6 +36,7 @@ namespace FSM_Challenge
         static readonly (int, int) UI_OFFSET = (5, 5);
         #endregion
 
+        // You shouldn't have to change anything here either!
         static void Main(string[] args)
         {
             Console.CursorVisible = false;
@@ -59,10 +60,8 @@ namespace FSM_Challenge
 
             }
 
-
         }
 
-        
         static EnemyState ProcessState(EnemyState state)
         {
             // TODO: Use rand in the switch statement to determine transitions
@@ -71,68 +70,35 @@ namespace FSM_Challenge
             switch (state)
             {
                 case EnemyState.Idle:
+                    //TODO: transition to other states based on rand
+                    //HINT: you can also return EnemyState.Idle sometimes to add more variation
                     
-                    if (rand < 0.1d) return EnemyState.Idle;
-                    if (rand < 0.2d) return EnemyState.Shooting;
-                    else return EnemyState.WalkingRandomly;
+                    return EnemyState.Shooting;
 
                 case EnemyState.Shooting:
-                    Shoot();
-                    if (rand < 0.5d) return EnemyState.Shooting;
-                    if (rand < 0.7d) return EnemyState.WalkingRandomly;
+                    // TODO: shoot a bullet
+                    // note: there is a Shoot method ready for use! 
+                    
                     return EnemyState.WalkingRandomly;
                 case EnemyState.WalkingRandomly:
+                    //TODO: move up, down, left or right randomly
 
-                    if (rand < 0.2d)
-                    {
-                        Move(-1, 0);
-
-                    }
-                    else if (rand < 0.4d)
-                    {
-                        Move(1, 0);
-                    }
-                    else if (rand < 0.6d)
-                    {
-                        Move(0, -1);
-                    }
-                    else if (rand < 0.8d)
-                    {
-                        Move(0, 1);
-                    }
-
-                    return EnemyState.WalkingInLine;
-                     
-                      
+                    return EnemyState.WalkingInLine;       
                 case EnemyState.WalkingInLine:
+                    //TODO: move player in direction they previously moved.
+                    //HINT: there is a lastEnemyPos variable that tells you the previous position!
 
-                    Move(enemyPos.Item1 - lastEnemyPos.Item1, enemyPos.Item2 - lastEnemyPos.Item2);
-
-                    if (rand < 0.1) return EnemyState.Shooting;
-                    if (rand < 0.2) return EnemyState.Idle;
-
-                    return EnemyState.WalkingInLine;
+                    return EnemyState.Idle;
                 default:
                     return EnemyState.Idle; // this case should never happen
             }
 
         }
 
-        static void DrawMap()
-        {
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
-            for (int i = 0; i < mapHeight; i++)
-            {
-                for(int j = 0; j < mapWidth; j++)
-                {
-                    if (j == enemyPos.Item1 && i == enemyPos.Item2) continue;
-                    Console.SetCursorPosition(j, i);
-                    Console.Write(" ");
+        #region METHODS_DO_NOT_EDIT
 
-                }
-            }
-        }
-
+        // move by adding x and y amount to player pos. 
+        // note: diagonal movement has not been tested. 
         static void Move(int x, int y)
         {
 
@@ -144,6 +110,7 @@ namespace FSM_Challenge
             }
         }
 
+        // spawn a bullet in front of the player, based on the last direction they moved
         static void Shoot()
         {
             bulletDirection = (enemyPos.Item1 - lastEnemyPos.Item1, enemyPos.Item2 - lastEnemyPos.Item2);
@@ -160,7 +127,7 @@ namespace FSM_Challenge
             bulletAlive = true;
             
         }
-
+        // check if a coordinate is within the 4 walls of the map
         static bool IsInBounds((int,int) coord)
         {
             if (coord.Item1 < 0 || coord.Item1 >= mapWidth - 1) return false;
@@ -168,7 +135,7 @@ namespace FSM_Challenge
             return true;
         }
 
-
+        // move bullet forward until it is out of bounds, then turn the bullet off
         static void UpdateBulletPosition()
         {
             bulletPos.Item1 += bulletDirection.Item1;
@@ -180,7 +147,6 @@ namespace FSM_Challenge
             }
         }
 
-
         static void DrawEnemy()
         {
             Console.BackgroundColor = ConsoleColor.DarkGreen;
@@ -189,10 +155,9 @@ namespace FSM_Challenge
             Console.Write("O");
         }
 
+        // Don't read this method, I wrote this program at 11pm.
         static void DrawBullet()
         {
-            
-
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.ForegroundColor = ConsoleColor.Black;
             if (!bulletAlive)
@@ -207,7 +172,6 @@ namespace FSM_Challenge
                 Console.Write("\u00b7");
             }
             
-
             if (bulletPos.Item1 - bulletDirection.Item1 == enemyPos.Item1 && bulletPos.Item1 - bulletDirection.Item2 == enemyPos.Item2) return;
 
             Console.SetCursorPosition(bulletPos.Item1 - bulletDirection.Item1, bulletPos.Item2 - bulletDirection.Item2);
@@ -225,6 +189,22 @@ namespace FSM_Challenge
             Console.SetCursorPosition(mapWidth + UI_OFFSET.Item1, UI_OFFSET.Item2);
             Console.Write(currentEnemyState);
         }
+
+        static void DrawMap()
+        {
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            for (int i = 0; i < mapHeight; i++)
+            {
+                for (int j = 0; j < mapWidth; j++)
+                {
+                    if (j == enemyPos.Item1 && i == enemyPos.Item2) continue;
+                    Console.SetCursorPosition(j, i);
+                    Console.Write(" ");
+
+                }
+            }
+        }
+
         static Dictionary<EnemyState, ConsoleColor> enemyStateConsoleColors = new Dictionary<EnemyState, ConsoleColor>
         {
             { EnemyState.Idle, ConsoleColor.White },
@@ -233,7 +213,7 @@ namespace FSM_Challenge
             {EnemyState.Shooting, ConsoleColor.Red }
         };
 
-
+        #endregion
 
     }
 }
