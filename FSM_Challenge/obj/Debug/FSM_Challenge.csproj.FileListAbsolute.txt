@@ -6,3 +6,11 @@ C:\Users\W0282611\Documents\FSM_Challenge\FSM_Challenge\obj\Debug\FSM_Challenge.
 C:\Users\W0282611\Documents\FSM_Challenge\FSM_Challenge\obj\Debug\FSM_Challenge.exe
 C:\Users\W0282611\Documents\FSM_Challenge\FSM_Challenge\obj\Debug\FSM_Challenge.pdb
 C:\Users\W0282611\Documents\FSM_Challenge\FSM_Challenge\obj\Debug\FSM_Challenge.exe.config
+C:\Users\mgc72\Documents\unity project\FSM_Challenge_GageMcKenzie\FSM_Challenge\bin\Debug\FSM_Challenge.exe.config
+C:\Users\mgc72\Documents\unity project\FSM_Challenge_GageMcKenzie\FSM_Challenge\bin\Debug\FSM_Challenge.exe
+C:\Users\mgc72\Documents\unity project\FSM_Challenge_GageMcKenzie\FSM_Challenge\bin\Debug\FSM_Challenge.pdb
+C:\Users\mgc72\Documents\unity project\FSM_Challenge_GageMcKenzie\FSM_Challenge\obj\Debug\FSM_Challenge.csproj.AssemblyReference.cache
+C:\Users\mgc72\Documents\unity project\FSM_Challenge_GageMcKenzie\FSM_Challenge\obj\Debug\FSM_Challenge.exe.config
+C:\Users\mgc72\Documents\unity project\FSM_Challenge_GageMcKenzie\FSM_Challenge\obj\Debug\FSM_Challenge.csproj.CoreCompileInputs.cache
+C:\Users\mgc72\Documents\unity project\FSM_Challenge_GageMcKenzie\FSM_Challenge\obj\Debug\FSM_Challenge.exe
+C:\Users\mgc72\Documents\unity project\FSM_Challenge_GageMcKenzie\FSM_Challenge\obj\Debug\FSM_Challenge.pdb
